@@ -21,8 +21,8 @@
 			
 			<!-- partial -->
 			<div class="container-fluid page-body-wrapper">
-				<div class="m-2 p-2">
-					<table class="table table-bordered table-hover table-striped table-responsive-sm text-center">
+				<div class="mt-2" style="width:95%">
+					<table class="table table-bordered table-hover table-striped table-responsive text-center">
 						<thead class="text-light">
 							<tr>
 								<th>Customer Name</th>
@@ -32,7 +32,7 @@
 								<th>Date</th>
 								<th>Message</th>
 								<th>Status</th>
-								<th colspan="2">Action</th>
+								<th colspan="3">Action</th>
 							</tr>
 						</thead>
 						<tbody class="table-dark">
@@ -46,6 +46,7 @@
 								<td>{{$info->message}}</td>
 								<td>{{$info->status}}</td>
 								<td><a href="{{url('aprove_appoint',$info->id)}}" class="btn btn-success">Approve</a></td>
+								<td><a href="{{url('send_mail',$info->id)}}" class="btn btn-primary">Send Mail</a></td>
 								<td><a href="{{url('canceled',$info->id)}}" class="btn btn-danger">Cancel</a></td>
 							</tr>
 							@endforeach

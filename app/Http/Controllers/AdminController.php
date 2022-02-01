@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Doctor;
 use App\Models\Appoinment;
+use Notification;
+use App\Notifications\SendCustomerEmailNotification;
 class AdminController extends Controller
 {
     function addview(){
@@ -102,5 +104,28 @@ class AdminController extends Controller
 
         $doctor->save();
         return redirect()->back()->with('message','Doctor Updated Successfully');
+    }
+
+    public function viewEmailSendCustomer($id){
+
+        $customer = Appoinment::find($id);
+
+        return view('admin.email_send',compact('customer'));
+    }
+
+    public function emailSendCustomer(Request $request, $id){
+
+        $data = Appoinment::find($id);
+        $details = [
+            'greeting' => $request->greeting,
+            'body' => $request->body,
+            'actiontext' => $request->actiontext,
+            'actionurl' => $request->actionurl,
+            'endpart' => $request->endpart
+        ];
+
+        Notification::send($data, new SendCustomerEmailNotification($details));
+
+        return redirect()->back()->with('message','Email send is successful');
     }
 }
