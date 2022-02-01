@@ -4,9 +4,6 @@
 @include('user.css')
 </head>
 <body>
-  <!-- Back to top button -->
-  <div class="back-to-top"></div>
-
   @include('user.header')
 
   <div class="page-hero bg-image overlay-dark" style="background-image: url(../assets/img/bg_image_1.jpg);">

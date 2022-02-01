@@ -1,3 +1,5 @@
+<!-- Back to top button -->
+<div class="back-to-top"></div>
 <header>
   <div class="topbar">
     <div class="container">

@@ -4,8 +4,6 @@
     @include('user.css')
   </head>
   <body>
-    <!-- Back to top button -->
-    <div class="back-to-top"></div>
     @include('user.header')
 
     <h1>doctor Page</h1>
