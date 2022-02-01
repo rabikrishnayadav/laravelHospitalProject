@@ -46,3 +46,22 @@ Route::post('/edit_doctor/{id}',[AdminController::class,'editDoctor']);
 Route::get('/send_mail/{id}',[AdminController::class,'viewEmailSendCustomer']);
 
 Route::post('/sendmail/{id}',[AdminController::class,'emailSendCustomer']);
+
+/*
+|---------------------------------------------------------------------------
+|                       Route For Pages
+|---------------------------------------------------------------------------
+*/
+
+Route::get('/about_page', function(){
+    return view('user.about_us');
+});
+Route::get('/doctor_page', function(){
+    return view('user.doctor_list');
+});
+Route::get('/news_page', function(){
+    return view('user.news');
+});
+Route::get('/contact_page', function(){
+    return view('user.contact_us');
+});
