@@ -7,11 +7,22 @@ use App\Models\Doctor;
 use App\Models\Appoinment;
 use Notification;
 use App\Notifications\SendCustomerEmailNotification;
+use Illuminate\Support\Facades\Auth;
 class AdminController extends Controller
 {
     function addview(){
 
-        return view('admin.add_doctor');
+        if (Auth::id()) {
+            if (Auth::user()->usertype==1) {
+                
+                return view('admin.add_doctor');
+            }else{
+                return redirect()->back();
+            }
+        }else{
+            return redirect('login');
+        }
+
     }
 
     function upload(Request $request){
@@ -36,8 +47,19 @@ class AdminController extends Controller
 
     public function viewAppoinments(){
 
-        $data = Appoinment::all();
-        return view('admin.show_appoinment', compact('data'));
+        if (Auth::id()) {
+            if (Auth::user()->usertype==1) {
+                
+            $data = Appoinment::all();
+            return view('admin.show_appoinment', compact('data'));
+                
+            }else{
+                return redirect()->back();
+            }
+        }else{
+            return redirect('login');
+        }
+
     }
 
     public function aproveAppoint($id){
@@ -62,8 +84,17 @@ class AdminController extends Controller
 
     public function showDoctor(){
 
-        $data = Doctor::all();
-        return view('admin.show_doctor', compact('data'));
+        if (Auth::id()) {
+            if (Auth::user()->usertype==1) {
+                
+            $data = Doctor::all();
+            return view('admin.show_doctor', compact('data'));
+            }else{
+                return redirect()->back();
+            }
+        }else{
+            return redirect('login');
+        }
     }
 
     public function deleteDoctor($id){
@@ -108,9 +139,18 @@ class AdminController extends Controller
 
     public function viewEmailSendCustomer($id){
 
-        $customer = Appoinment::find($id);
+         if (Auth::id()) {
+            if (Auth::user()->usertype==1) {
+                
+            $customer = Appoinment::find($id);
+            return view('admin.email_send',compact('customer'));
+            }else{
+                return redirect()->back();
+            }
+        }else{
+            return redirect('login');
+        }
 
-        return view('admin.email_send',compact('customer'));
     }
 
     public function emailSendCustomer(Request $request, $id){
