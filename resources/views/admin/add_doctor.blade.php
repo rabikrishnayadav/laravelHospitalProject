@@ -46,10 +46,11 @@
 						<label>Speciality</label>
 						<select name="speciality" class="bg-dark" required>
 							<option value="">--Select Speciality--</option>
-							<option value="skin">Skin</option>
-							<option value="heart">Heart</option>
-							<option value="eye">Eye</option>
-							<option value="nose">Nose</option>
+							<option value="general">General Health</option>
+				              <option value="cardiology">Cardiology</option>
+				              <option value="dental">Dental</option>
+				              <option value="neurology">Neurology</option>
+				              <option value="orthopaedics">Orthopaedics</option>
 						</select>
 					</div>
 					<div class="p-2">
