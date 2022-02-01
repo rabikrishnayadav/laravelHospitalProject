@@ -35,3 +35,7 @@ Route::get('/view_appoinments',[AdminController::class,'viewAppoinments']);
 Route::get('/aprove_appoint/{id}',[AdminController::class,'aproveAppoint']);
 
 Route::get('/canceled/{id}',[AdminController::class,'cancelAppoint']);
+
+Route::get('/show_doctor',[AdminController::class,'showDoctor']);
+
+Route::get('/delete_doctor/{id}',[AdminController::class,'deleteDoctor']);
