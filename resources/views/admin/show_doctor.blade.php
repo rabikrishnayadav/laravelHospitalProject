@@ -41,7 +41,7 @@
 								<td>{{$info->speciality}}</td>
 								<td>{{$info->room}}</td>
 								<td><a href="doctorimage/{{$info->image}}"><img src="doctorimage/{{$info->image}}"></a></td>
-								<td><a href="" class="btn btn-warning" style="color:black">Update</a></td>
+								<td><a href="{{url('update_doctor', $info->id)}}" class="btn btn-warning" style="color:black">Update</a></td>
 								<td><a href="{{url('delete_doctor', $info->id)}}" onclick="return confirm('Are you sure to Delete Doctor')" class="btn btn-danger">Delete</a></td>
 							</tr>
 							@endforeach
