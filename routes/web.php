@@ -62,6 +62,9 @@ Route::get('/doctor_page', function(){
 Route::get('/news_page', function(){
     return view('user.news');
 });
+Route::get('/news-details', function(){
+    return view('user.news-details');
+});
 Route::get('/contact_page', function(){
     return view('user.contact_us');
 });
