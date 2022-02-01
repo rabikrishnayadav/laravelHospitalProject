@@ -20,7 +20,7 @@
       <div class="col-sm-6 col-lg-3 py-3">
         <h5>Company</h5>
         <ul class="footer-menu">
-          <li><a href="#">About Us</a></li>
+          <li><a href="{{url('about_page')}}">About Us</a></li>
           <li><a href="#">Career</a></li>
           <li><a href="#">Editorial Team</a></li>
           <li><a href="#">Protection</a></li>
@@ -45,9 +45,9 @@
       </div>
       <div class="col-sm-6 col-lg-3 py-3">
         <h5>Contact</h5>
-        <p class="footer-link mt-2">351 Willow Street Franklin, MA 02038</p>
-        <a href="#" class="footer-link">701-573-7582</a>
-        <a href="#" class="footer-link">healthcare@temporary.net</a>
+        <p class="footer-link mt-2">Ramanand Chowk, Janakpur, Nepal, 45600</p>
+        <a href="#" class="footer-link">+977 9826832728</a>
+        <a href="#" class="footer-link">rabikrishnayadav@gmail.com</a>
         <h5 class="mt-3">Social Media</h5>
         <div class="footer-sosmed mt-3">
           <a href="#" target="_blank"><span class="mai-logo-facebook-f"></span></a>
@@ -59,6 +59,6 @@
       </div>
     </div>
     <hr>
-    <p id="copyright">Copyright &copy; 2020 <a href="https://macodeid.com/" target="_blank">MACode ID</a>. All right reserved</p>
+    <p id="copyright">Copyright &copy; 2021 <a href="https://rabikrishnayadav.com.np/" target="_blank">Rabi Kr Yadav</a>. All right reserved</p>
   </div>
 </footer>
